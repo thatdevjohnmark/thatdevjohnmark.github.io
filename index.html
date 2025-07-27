@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>thatdevjohnmark</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#FAF9EE] text-black min-h-screen font-mono">
+
+  <!-- Navigation -->
+  <nav class="container mx-auto mt-4 p-4 flex items-center">
+    <!-- Logo -->
+    <a href="#" class="mr-6 flex-shrink-0 group">
+      <img src="img/logo1.png" alt="Logo" class="transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" />
+    </a>
+    <ul class="flex flex-start gap-4">
+      <li>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition text-lg font-semibold">Home</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition text-lg font-semibold">My Works</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition text-lg font-semibold">About Me</a>
+      </li>
+      <li>
+        <div class="relative group">
+          <button class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-white transition text-lg font-semibold focus:outline-none">
+            More links
+            <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <ul class="absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-opacity duration-150 z-10">
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-black">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-black">Certificates</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-black">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="container mx-auto mt-8 p-4 flex flex-col md:flex-row gap-6 items-center">
+    
+    <!-- Text Content -->
+    <div class="md:w-1/2 p-4 flex flex-col justify-center">
+      <h1 id="typing-text" class="text-6xl font-bold text-center md:text-left mb-4" style="color: #121212;">
+        <span></span>
+        <span class="border-r-2 border-black animate-pulse ml-1"></span>
+      </h1>
+      <script>
+        const text = "Welcome to My Portfolio";
+        const target = document.querySelector("#typing-text span");
+        let i = 0;
+        function type() {
+          if (i <= text.length) {
+        target.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, 80); // Slower typing for smoother effect
+          } else {
+        animateDots();
+          }
+        }
+        type();
+
+        // Animate the cursor in a loop (fade instead of toggle)
+        const cursor = document.querySelector("#typing-text .border-r-2");
+        setInterval(() => {
+          cursor.classList.toggle("opacity-0");
+        }, 400);
+
+        // Animate the dots after typing (fade in/out)
+        function animateDots() {
+          let dotCount = 0;
+          setInterval(() => {
+        let dots = '.'.repeat(dotCount % 4);
+        target.textContent = text + dots;
+        dotCount++;
+          }, 500);
+        }
+      </script>
+      <p class="text-lg text-center md:text-left">
+        I’m <strong>John Mark</strong>, a passionate IT student with hands-on experience in building user-friendly web 
+        and mobile applications. AWS Academy Cloud Foundations graduate, focused on full stack development, 
+        cloud computing, and real-world tech solutions.
+      </p>
+      <div class="mt-4 flex gap-6">
+        <a class="bg-yellow-300 border-4 border-black text-black px-8 py-3 font-bold uppercase shadow-[4px_4px_0_0_#000] hover:bg-yellow-400 transition-all duration-150 rounded-none" href="#">
+          Resume
+        </a>
+        <a class="bg-white border-4 border-black text-black px-8 py-3 font-bold uppercase shadow-[4px_4px_0_0_#000] hover:bg-gray-200 transition-all duration-150 rounded-none" href="#">
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="md:w-1/2 p-4">
+      <img 
+        src="https://scontent-mad2-1.xx.fbcdn.net/v/t39.30808-6/399780370_1732443603847075_8962544159518276141_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE-S6TMFh7d-K3S3Vpx30bcccgyPlatRDNxyDI-Vq1EM5h4LApFUybgihhzmmRsugSMg4zsO1Js_COeCb9Hi3zE&_nc_ohc=n1xFqq_Wrg8Q7kNvwGrgBFx&_nc_oc=AdnpJ3wQfGd4CqdkGYlHfqpWdZzUQXjZm06pJ3ZC0owCHnVgzdSX9imtAmo_Cl6IkhgrciUN3o2gV6rTMdpBOsH2&_nc_zt=23&_nc_ht=scontent-mad2-1.xx&_nc_gid=mitxQiobtKZ9u8Axz_FvEg&oh=00_AfRbJoDJrR-v26KCx8d4ijDYUEhopLiFStR6xKOJglOj8Q&oe=68894FF2"
+        alt="John Mark"
+        class="w-full object-cover rounded-xl grayscale"
+      />
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="container mx-auto mt-12 p-4 " >
+    <h2 class="text-2xl  mb-6 text-center">Skills</h2>
+    <h1 class="font-bold text-center mb-4 text-4xl">Explore My Key Skills and<br> Services</h1>
+    <p class="text-center W-1/4 mb-8">I specialize in a range of technologies and tools that empower me to create efficient and scalable solutions.</p>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://cdn.iconscout.com/icon/free/png-512/free-html-5-1-1175208.png?f=webp&w=256" alt="HTML">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">HTML</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://cdn.iconscout.com/icon/free/png-512/free-css-131-722685.png?f=webp&w=256" alt="CSS">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">CSS</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group ">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://skillforge.com/wp-content/uploads/2020/10/javascript-768x866.png" alt="JavaScript">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">JavaScript</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/800px-Laravel.svg.png" alt="Laravel">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">Laravel</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="Python">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">Python</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://unifysolutions.net/supportedproduct/microsoft-sql-server/SQL-Databases.svg" alt="SQL Server">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">SQL</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*UTBrDcrJ6SbePBzR" alt="Figma">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">Figma</span>
+      </div>
+      <div class="bg-white border-4 border-black shadow-[4px_4px_0_0_#000] p-4 flex flex-col items-center w-40 rounded-none transition-transform duration-200 hover:-translate-y-2 hover:bg-[#121212] hover:text-white hover:shadow-[8px_8px_0_0_#000] group">
+      <img class="w-20 h-20 object-contain mb-2 group-hover:grayscale-0 group-hover:brightness-125 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-6" src="https://brandlogos.net/wp-content/uploads/2020/03/Microsoft-Office-365.png" alt="MS Office">
+      <span class="font-bold uppercase text-black group-hover:text-white transition-colors">MS Office</span>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  
+
+
+  <!-- Footer -->
+  <footer class="bg-yellow-300 border-t-4 border-black shadow-[0_-4px_0_0_#000] py-8 mt-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="font-bold uppercase text-black tracking-widest text-lg">
+        © 2024 John Mark
+      </span>
+      <div class="flex gap-6">
+        <a href="#" class="border-2 border-black px-4 py-2 font-bold uppercase bg-white text-black shadow-[2px_2px_0_0_#000] hover:bg-gray-200 transition-all duration-150 rounded-none">GitHub</a>
+        <a href="#" class="border-2 border-black px-4 py-2 font-bold uppercase bg-white text-black shadow-[2px_2px_0_0_#000] hover:bg-gray-200 transition-all duration-150 rounded-none">LinkedIn</a>
+        <a href="mailto:johnmark@email.com" class="border-2 border-black px-4 py-2 font-bold uppercase bg-white text-black shadow-[2px_2px_0_0_#000] hover:bg-gray-200 transition-all duration-150 rounded-none">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
